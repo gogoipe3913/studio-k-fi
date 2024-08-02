@@ -1,0 +1,124 @@
+@import "../../../style/variables.scss";
+@import "../../../style/mixin.scss";
+
+.WorksDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $global-elevation-3;
+  padding: 80px 112px 200px;
+  width: calc(100% - 120px - 100px);
+  height: 100svh;
+  overflow-y: scroll;
+  transform: translateX(160%);
+  transition-duration: 0.5s;
+  transition-timing-function: $timing-function-image;
+  background-color: $background-color-hover;
+  border-radius: 0 0 0 120px;
+  color: $font-color-white;
+
+  &--displayed {
+    transform: translateX(0);
+  }
+
+  .WorksDrawer__closeButton {
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    width: 80px;
+    height: 16px;
+
+    &:hover {
+      .WorksDrawer__closeButtonLine {
+        transform: translateX(12px);
+        background-color: $font-color-hover-blue;
+
+        &::after {
+          transform: rotate(390deg);
+          background-color: $font-color-hover-blue;
+        }
+      }
+    }
+  }
+
+  .WorksDrawer__closeButtonLine {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 1px;
+    background-color: $font-color-white;
+    transition-duration: 0.5s;
+    transition-timing-function: $timing-function-image;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: -2px;
+      display: block;
+      width: 22px;
+      height: 1px;
+      background-color: $font-color-white;
+      transform: rotate(30deg);
+      transition-duration: 1s;
+      transition-timing-function: $timing-function-image;
+    }
+  }
+
+  .WorksDrawer__contents {
+    & > * {
+      transition-duration: 0.5s;
+      transition-timing-function: $timing-function-image;
+    }
+  }
+
+  .WorksDrawer__title {
+    font-size: 22px;
+  }
+
+  .WorksDrawer__separator {
+    margin: 32px 0 40px;
+    width: 16px;
+    height: 1px;
+    background-color: $font-color-white;
+  }
+
+  .WorksDrawer__createDate,
+  .WorksDrawer__category {
+    font-size: 13px;
+  }
+
+  .WorksDrawer__body {
+    display: flex;
+    gap: 48px;
+  }
+
+  .WorksDrawer__text {
+    font-size: 12px;
+    line-height: 2.2em;
+    letter-spacing: 0.1em;
+  }
+
+  .WorksDrawer__link {
+    margin: 48px 0;
+  }
+
+  .WorksDrawer__textEnglish {
+    font-size: 14px;
+    line-height: 2.1em;
+    letter-spacing: 0.06em;
+  }
+
+  .WorksDrawer__text,
+  .WorksDrawer__textEnglish {
+    max-width: 440px;
+    min-width: 300px;
+    white-space: pre-line;
+  }
+
+  .WorksDrawer__images {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+}

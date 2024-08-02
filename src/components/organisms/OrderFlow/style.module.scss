@@ -1,0 +1,92 @@
+@import "../../../style/variables.scss";
+@import "../../../style/mixin.scss";
+
+.OrderFlow {
+  position: relative;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  padding: 28% 10%;
+  width: 100%;
+  text-align: left;
+
+  // スマホ以下
+  @include respondToSm {
+    padding: 28% 36px;
+  }
+
+  .OrderFlow__contents {
+    width: 100%;
+  }
+
+  .OrderFlow__title {
+    height: 280px;
+  }
+
+  .OrderFlow__titleBody {
+    position: sticky;
+    top: 25%;
+    font-size: 22px;
+  }
+
+  .OrderFlow__texts {
+    margin-left: 100px;
+  }
+
+  .OrderFlow__text {
+    margin: 100px 0;
+    font-size: 12px;
+    line-height: 2.2em;
+    letter-spacing: 0.12em;
+    font-family: "dnp-shuei-gothic-gin-std", sans-serif;
+
+    // スマホ以下
+    @include respondToSm {
+      font-size: 11px;
+    }
+  }
+
+  .OrderFlow__separator {
+    margin-top: 48px;
+    padding-top: 48px;
+    width: 20px;
+    height: 1px;
+    border-top: 1px solid $font-color-black;
+  }
+
+  .OrderFlow__sectionTitle {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .OrderFlow__sectionNumber {
+    margin-top: -4px;
+    display: block;
+    font-size: 10px;
+  }
+
+  .OrderFlow__sectionTextEnglish {
+    display: block;
+    margin-left: 4px;
+    font-size: 22px;
+  }
+
+  .OrderFlow__sectionText {
+    margin-left: 16px;
+    padding-left: 16px;
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    border-left: 1px solid $font-color-black;
+  }
+
+  .OrderFlow__sectionContentText {
+    margin-top: 12px;
+    font-family: "dnp-shuei-gothic-gin-std", sans-serif;
+    font-size: 12px;
+    line-height: 2.2em;
+    letter-spacing: 0.12em;
+    white-space: pre-line;
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../../style/variables.scss";
+@import "../../../style/mixin.scss";
+
+.SideColumn {
+  padding: 80px 0 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: fit-content;
+  height: 100svh;
+
+  // スマホ以下
+  @include respondToSm {
+  }
+
+  & .SideColumn__logoLink {
+    display: block;
+    width: 100px;
+  }
+
+  & .SideColumn__logoLinkText {
+    margin-top: 4px;
+    font-size: 9px;
+  }
+
+  & .SideColumn__anchors {
+    display: flex;
+    flex-direction: column;
+
+    & > li + li {
+      margin-top: 12px;
+    }
+
+    & > li > a {
+      cursor: pointer;
+    }
+
+    & > li:hover {
+      a {
+        color: $font-color-hover;
+      }
+    }
+  }
+
+  & .SideColumn__separator {
+    margin: 20px 0;
+    width: 12px;
+    height: 1px;
+    background-color: $font-color-black;
+  }
+
+  & .SideColumn__link {
+    display: block;
+
+    &:hover {
+      color: $font-color-hover;
+    }
+  }
+
+  & .SideColumn__link + .SideColumn__link {
+    margin-top: 12px;
+  }
+}

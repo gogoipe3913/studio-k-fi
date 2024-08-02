@@ -1,0 +1,77 @@
+@import "../../../style/variables.scss";
+@import "../../../style/mixin.scss";
+
+.Footer {
+  position: relative;
+  margin-top: 200px;
+  margin-left: 100px;
+  padding: 12px 12px 100px 12px;
+  display: flex;
+  justify-content: space-between;
+  color: $font-color-black;
+  text-align: center;
+
+  // スマホ以下
+  @include respondToSm {
+    margin-top: 60px;
+  }
+
+  .Footer__anchors {
+    display: flex;
+
+    li + li {
+      margin-left: 12px;
+    }
+  }
+
+  .Footer__companyInfo {
+    // margin-top: 60px;
+  }
+
+  .Footer__infoDetail {
+    margin-top: 12px;
+    & > a,
+    span {
+      display: block;
+      width: fit-content;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+  }
+
+  .Footer__externalLinks {
+    margin-top: 40px;
+
+    a {
+      display: block;
+      width: fit-content;
+    }
+
+    a + a {
+      margin-top: 8px;
+    }
+  }
+
+  .Footer__copyright {
+    margin-top: 40px;
+    font-size: 10px;
+    text-align: left;
+  }
+
+  .Footer__rightColumn {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .Footer__contact {
+    margin-left: -20px;
+
+    & > span {
+      font-size: 13px;
+    }
+  }
+
+  .Footer__contactLink {
+    margin-top: 16px;
+  }
+}

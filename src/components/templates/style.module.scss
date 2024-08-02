@@ -1,0 +1,37 @@
+@import "../../style/variables.scss";
+@import "../../style/mixin.scss";
+
+.Templates {
+  position: relative;
+  padding: 0 60px;
+  display: flex;
+
+  .Templates__noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0.03;
+  }
+
+  .Templates__noiseGif {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/public/images/noise.gif);
+  }
+
+  & .Templates__sideColumn {
+    position: sticky;
+    top: 0;
+  }
+
+  & .Templates__mainColumn {
+    width: 100%;
+  }
+
+  & .Templates__top {
+  }
+}
