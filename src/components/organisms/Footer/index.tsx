@@ -27,10 +27,15 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => (
             width={92}
             src="/images/logo.svg"
             alt="スタジオケーファイのロゴ"
+            className={style.Footer__logo}
           />
           <p className={style.Footer__infoDetail}>
             <a href="mailto:info@k-fi.jp">Mail: info@k-fi.com</a>
-            <span>Address: 3-12-2, Minamidai, Nakano-ku, Tokyo</span>
+            <span>
+              Address: 3-12-2, Minamidai,
+              <br className={style.Footer__textBreak} />
+              Nakano-ku, Tokyo
+            </span>
           </p>
         </div>
         <p className={style.Footer__externalLinks}>
@@ -50,7 +55,12 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => (
         </p>
       </div>
       <div className={style.Footer__rightColumn}>
-        <img width={200} src="/images/sen.png" alt="手書き線" />
+        <img
+          width={200}
+          src="/images/sen.png"
+          alt="手書き線"
+          className={style.Footer__lineImage}
+        />
         <p className={style.Footer__contact}>
           <span>お仕事のご相談はこちらから</span>
           <LinkButton

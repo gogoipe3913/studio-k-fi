@@ -14,6 +14,8 @@
   // スマホ以下
   @include respondToSm {
     margin-top: 60px;
+    margin-left: initial;
+    padding: 36px;
   }
 
   .Footer__anchors {
@@ -24,8 +26,10 @@
     }
   }
 
-  .Footer__companyInfo {
-    // margin-top: 60px;
+  .Footer__logo {
+    @include respondToSm {
+      width: 80px;
+    }
   }
 
   .Footer__infoDetail {
@@ -36,6 +40,20 @@
       width: fit-content;
       font-size: 13px;
       line-height: 1.2;
+      white-space: nowrap;
+
+      @include respondToSm {
+        font-size: 11px;
+        text-align: left;
+      }
+    }
+  }
+
+  .Footer__textBreak {
+    display: none;
+
+    @include respondToSm {
+      display: initial;
     }
   }
 
@@ -45,6 +63,10 @@
     a {
       display: block;
       width: fit-content;
+
+      @include respondToSm {
+        font-size: 13px;
+      }
     }
 
     a + a {
@@ -61,13 +83,32 @@
   .Footer__rightColumn {
     display: flex;
     align-items: flex-end;
+
+    @include respondToSm {
+      margin-left: -56px;
+    }
+  }
+
+  .Footer__lineImage {
+    @include respondToSm {
+      transform: translateY(-28px);
+      width: 120px;
+    }
   }
 
   .Footer__contact {
     margin-left: -20px;
 
+    @include respondToSm {
+      margin-left: -48px;
+    }
+
     & > span {
       font-size: 13px;
+
+      @include respondToSm {
+        font-size: 11px;
+      }
     }
   }
 

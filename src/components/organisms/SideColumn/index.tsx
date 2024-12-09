@@ -4,6 +4,7 @@ import LogoMain from "../../atoms/LogoMain";
 import classNames from "classnames";
 import { Link } from "react-scroll";
 import { ANCHOR_ITEMS, EXTERNAL_URLS } from "./data";
+import Menu from "../Menu";
 
 type SideColumnProps = {
   className?: string;
@@ -18,7 +19,7 @@ const SideColumn: React.FC<SideColumnProps> = ({ className = "" }) => {
           furniture + architecture <br /> and creative <br /> design studio k-fi
         </p>
       </a>
-      <div>
+      <div className={style.SideColumn__anchorsWrapper}>
         <ul className={style.SideColumn__anchors}>
           {ANCHOR_ITEMS.map((item, index) =>
             item.id !== "top" ? (
@@ -38,6 +39,7 @@ const SideColumn: React.FC<SideColumnProps> = ({ className = "" }) => {
           IG
         </a>
       </div>
+      <Menu className={style.SideColumn__spHamburger} />
     </div>
   );
 };

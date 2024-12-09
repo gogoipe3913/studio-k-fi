@@ -32,6 +32,10 @@
 
   .OrderFlow__texts {
     margin-left: 100px;
+
+    @include respondToSm {
+      margin-left: initial;
+    }
   }
 
   .OrderFlow__text {
@@ -43,7 +47,14 @@
 
     // スマホ以下
     @include respondToSm {
+      margin-top: 40px;
       font-size: 11px;
+    }
+  }
+
+  .OrderFlow__textBreak {
+    @include respondToSm {
+      display: none;
     }
   }
 
@@ -70,6 +81,11 @@
     display: block;
     margin-left: 4px;
     font-size: 22px;
+
+    @include respondToSm {
+      margin-left: 8px;
+      font-size: 21px;
+    }
   }
 
   .OrderFlow__sectionText {
@@ -88,5 +104,10 @@
     line-height: 2.2em;
     letter-spacing: 0.12em;
     white-space: pre-line;
+
+    // スマホ以下
+    @include respondToSm {
+      font-size: 11px;
+    }
   }
 }

@@ -7,6 +7,10 @@ $timing-function-image: cubic-bezier(0.83, 0, 0.17, 1);
 .Works {
   margin-left: 10%;
 
+  @include respondToSm {
+    margin-left: 36px;
+  }
+
   .Works__title {
     height: 320px;
   }
@@ -29,11 +33,19 @@ $timing-function-image: cubic-bezier(0.83, 0, 0.17, 1);
     @include respondToMd {
       column-count: 1; /* カラムの数を指定 */
     }
+
+    @include respondToSm {
+      margin-top: 40px;
+    }
   }
 
   .Works__item {
     max-width: 360px;
     break-inside: avoid; /* カードがカラム間で分割されないようにする */
+
+    @include respondToSm {
+      max-width: 303px;
+    }
   }
 
   .Works__itemImageWrapper {

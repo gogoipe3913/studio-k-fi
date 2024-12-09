@@ -9,6 +9,13 @@
   width: fit-content;
   height: 100svh;
 
+  @include respondToSm {
+    padding: 0px 36px;
+    flex-direction: row;
+    width: 100vw;
+    height: initial;
+  }
+
   // スマホ以下
   @include respondToSm {
   }
@@ -16,11 +23,28 @@
   & .SideColumn__logoLink {
     display: block;
     width: 100px;
+
+    @include respondToSm {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 80px;
+    }
   }
 
   & .SideColumn__logoLinkText {
     margin-top: 4px;
     font-size: 9px;
+
+    @include respondToSm {
+      margin-top: 8px;
+    }
+  }
+
+  & .SideColumn__anchorsWrapper {
+    @include respondToSm {
+      display: none;
+    }
   }
 
   & .SideColumn__anchors {
@@ -63,5 +87,13 @@
 
   & .SideColumn__link + .SideColumn__link {
     margin-top: 12px;
+  }
+
+  & .SideColumn__spHamburger {
+    display: none;
+
+    @include respondToSm {
+      display: initial;
+    }
   }
 }

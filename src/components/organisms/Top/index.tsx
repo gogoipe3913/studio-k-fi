@@ -31,14 +31,13 @@ const Top: React.FC<TopProps> = ({ className = "" }) => {
     >
       {/* <Loading isLoadedFirstImage={imageLoaded} /> */}
       <div className={style.Top__videoWrapper}>
-        <p className={style.Top__titleBox}>
-          <img
-            width={560}
-            src={kehaiImg}
-            alt="気配を感じさせる手書き線"
-            className={style.Top__lineImage}
-          />
-        </p>
+        <img
+          width={560}
+          src={kehaiImg}
+          alt="気配を感じさせる手書き線"
+          className={style.Top__lineImage}
+        />
+
         <div className={style.Top__videoFrame}>
           <video
             playsInline

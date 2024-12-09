@@ -24,7 +24,7 @@ const OrderFlow: React.FC = () => {
             <div className={style.OrderFlow__texts}>
               <p className={style.OrderFlow__text}>
                 studio K-Fi では、オンラインショップで展開している家具の他にも
-                <br />
+                <br className={style.OrderFlow__textBreak} />
                 オーダーメイド家具の製作/インテリアディレクション/内装を承っています。
                 <br />
                 ご依頼の際は以下のフローとなりますので、まずはお気軽にご相談ください。

@@ -14,15 +14,11 @@ const ANCHOR_ITEMS = [
   },
   {
     title: "Works",
-    id: "work",
+    id: "works",
   },
   {
     title: "OrderFlow",
     id: "orderFlow",
-  },
-  {
-    title: "About",
-    id: "about",
   },
 ];
 

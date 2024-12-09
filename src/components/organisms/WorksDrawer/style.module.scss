@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  z-index: $global-elevation-3;
+  z-index: $global-elevation-4;
   padding: 80px 112px 200px;
   width: calc(100% - 120px - 100px);
   height: 100svh;
@@ -16,6 +16,12 @@
   background-color: $background-color-hover;
   border-radius: 0 0 0 120px;
   color: $font-color-white;
+
+  @include respondToSm {
+    width: 92%;
+    height: 98svh;
+    padding: 80px 0 80px 40px;
+  }
 
   &--displayed {
     transform: translateX(0);

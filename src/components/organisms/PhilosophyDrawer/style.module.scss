@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  z-index: $global-elevation-3;
+  z-index: $global-elevation-4;
   padding: 80px 160px 200px;
   width: calc(100% - 160px - 100px);
   height: 88svh;
@@ -17,6 +17,12 @@
   border-radius: 0 0 0 120px;
   color: $font-color-white;
 
+  @include respondToSm {
+    width: 92%;
+    height: 98svh;
+    padding: 80px 0 80px 40px;
+  }
+
   &--displayed {
     transform: translateX(0);
   }
@@ -27,6 +33,10 @@
     right: 100px;
     width: 80px;
     height: 16px;
+
+    @include respondToSm {
+      right: 40px;
+    }
 
     @media (hover: hover) {
       &:hover {
@@ -87,6 +97,11 @@
 
   .PhilosophyDrawer__texts {
     display: flex;
+
+    @include respondToSm {
+      flex-direction: column;
+      width: 272px;
+    }
   }
 
   .PhilosophyDrawer__text {
@@ -100,11 +115,21 @@
     font-size: 13px;
     line-height: 2.1em;
     letter-spacing: 0.06em;
+
+    @include respondToSm {
+      margin-left: initial;
+      margin-top: 48px;
+    }
   }
 
   .PhilosophyDrawer__text,
   .PhilosophyDrawer__textEnglish {
     max-width: 440px;
     min-width: 300px;
+
+    @include respondToSm {
+      max-width: initial;
+      min-width: initial;
+    }
   }
 }

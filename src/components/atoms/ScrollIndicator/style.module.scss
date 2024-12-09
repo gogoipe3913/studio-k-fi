@@ -8,11 +8,6 @@
   letter-spacing: 0.03em;
   transform: rotate(90deg);
 
-  // デスクトップ以下
-  @include respondToLg {
-    color: $font-color-white;
-  }
-
   &::after {
     content: "";
     position: relative;
@@ -28,11 +23,6 @@
     animation-duration: 2.1s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-
-    // デスクトップ以下
-    @include respondToLg {
-      background-color: $font-color-white;
-    }
   }
 }
 

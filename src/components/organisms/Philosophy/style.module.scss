@@ -34,6 +34,12 @@
     margin-top: 100px;
     padding-left: 92px;
     display: flex;
+
+    @include respondToSm {
+      margin-top: 40px;
+      padding-left: initial;
+      flex-direction: column;
+    }
   }
 
   .Philosophy__text {
@@ -41,11 +47,6 @@
     font-size: 11px;
     line-height: 2.2em;
     letter-spacing: 0.18em;
-
-    // スマホ以下
-    @include respondToSm {
-      font-size: 11px;
-    }
   }
 
   .Philosophy__textEnglish {
@@ -56,6 +57,8 @@
     letter-spacing: 0.08em;
 
     @include respondToSm {
+      margin-top: 16px;
+      margin-left: initial;
       font-size: 10px;
     }
   }

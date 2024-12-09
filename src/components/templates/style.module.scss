@@ -6,6 +6,11 @@
   padding: 0 60px;
   display: flex;
 
+  @include respondToSm {
+    display: initial;
+    padding: 0 20px;
+  }
+
   .Templates__noise {
     position: fixed;
     top: 0;
@@ -26,12 +31,15 @@
   & .Templates__sideColumn {
     position: sticky;
     top: 0;
+
+    @include respondToSm {
+      position: fixed;
+      top: 48px;
+      z-index: $global-elevation-3 + 1;
+    }
   }
 
   & .Templates__mainColumn {
     width: 100%;
-  }
-
-  & .Templates__top {
   }
 }
