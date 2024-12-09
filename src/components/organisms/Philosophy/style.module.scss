@@ -70,29 +70,31 @@
     display: flex;
     width: 144px;
 
-    &:hover {
-      .Philosophy__buttonText {
-        padding-right: 8px;
-        border-radius: 17px 0 0 17px;
-        border: 1px solid transparent;
-        color: $font-color-white;
-        background-color: $background-color-hover;
-      }
+    @media (hover: hover) {
+      &:hover {
+        .Philosophy__buttonText {
+          padding-right: 8px;
+          border-radius: 17px 0 0 17px;
+          border: 1px solid transparent;
+          color: $font-color-white;
+          background-color: $background-color-hover;
+        }
 
-      .Philosophy__buttonCircle {
-        margin-left: -4px;
-        padding-right: 18px;
-        width: 38px;
-        border-radius: 0 24px 24px 0;
-        border: 1px solid transparent;
-        background-color: $background-color-hover;
-      }
+        .Philosophy__buttonCircle {
+          margin-left: -4px;
+          padding-right: 18px;
+          width: 38px;
+          border-radius: 0 24px 24px 0;
+          border: 1px solid transparent;
+          background-color: $background-color-hover;
+        }
 
-      .Philosophy__buttonArrow {
-        border-top: 1px solid $font-color-white;
-
-        &::after {
+        .Philosophy__buttonArrow {
           border-top: 1px solid $font-color-white;
+
+          &::after {
+            border-top: 1px solid $font-color-white;
+          }
         }
       }
     }

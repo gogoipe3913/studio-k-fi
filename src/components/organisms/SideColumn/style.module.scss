@@ -35,9 +35,11 @@
       cursor: pointer;
     }
 
-    & > li:hover {
-      a {
-        color: $font-color-hover;
+    @media (hover: hover) {
+      & > li:hover {
+        a {
+          color: $font-color-hover;
+        }
       }
     }
   }
@@ -52,8 +54,10 @@
   & .SideColumn__link {
     display: block;
 
-    &:hover {
-      color: $font-color-hover;
+    @media (hover: hover) {
+      &:hover {
+        color: $font-color-hover;
+      }
     }
   }
 

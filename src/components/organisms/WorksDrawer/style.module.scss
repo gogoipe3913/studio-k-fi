@@ -28,14 +28,16 @@
     width: 80px;
     height: 16px;
 
-    &:hover {
-      .WorksDrawer__closeButtonLine {
-        transform: translateX(12px);
-        background-color: $font-color-hover-blue;
-
-        &::after {
-          transform: rotate(390deg);
+    @media (hover: hover) {
+      &:hover {
+        .WorksDrawer__closeButtonLine {
+          transform: translateX(12px);
           background-color: $font-color-hover-blue;
+
+          &::after {
+            transform: rotate(390deg);
+            background-color: $font-color-hover-blue;
+          }
         }
       }
     }

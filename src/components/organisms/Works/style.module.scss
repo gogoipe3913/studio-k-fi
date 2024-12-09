@@ -57,19 +57,21 @@ $timing-function-image: cubic-bezier(0.83, 0, 0.17, 1);
   }
 
   .Works__item {
-    &:hover {
-      .Works__itemImageWrapper {
-        border-radius: 80px 80px 8px 8px;
-        .Works__itemImage {
-          transform: scale(1.2);
+    @media (hover: hover) {
+      &:hover {
+        .Works__itemImageWrapper {
+          border-radius: 80px 80px 8px 8px;
+          .Works__itemImage {
+            transform: scale(1.2);
+          }
         }
-      }
 
-      .Works__itemInfo > .Works__itemInfoTitle {
-        color: $font-color-hover;
+        .Works__itemInfo > .Works__itemInfoTitle {
+          color: $font-color-hover;
 
-        &::before {
-          width: 32px;
+          &::before {
+            width: 32px;
+          }
         }
       }
     }
