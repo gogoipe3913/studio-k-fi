@@ -43,6 +43,7 @@ const WorkItems: React.FC<WorkItemsProps> = ({
                 key={index}
                 src={url}
                 alt={`${title}のサムネイル画像`}
+                loading="lazy"
                 className={style.Works__itemImage}
               />
             ) : null

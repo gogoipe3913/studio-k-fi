@@ -44,7 +44,9 @@ const WorksDrawerContents: React.FC<WorksDrawerContentsProps> = ({
         </div>
         <div className={style.WorksDrawer__images}>
           {urls.length !== 0 &&
-            urls.map((url, index) => <img key={index} src={url} alt="" />)}
+            urls.map((url, index) => (
+              <img key={index} src={url} alt="" loading="lazy" />
+            ))}
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import ScrollIndicator from "../../atoms/ScrollIndicator";
 // import Loading from "../../atoms/Loading";
 import kehaiImg from "/public/images/kehai.png";
 import classNames from "classnames";
+import { FadeInContainer } from "../../atoms/FadeInContainer";
 
 type TopProps = {
   className?: string;
@@ -21,41 +22,43 @@ const Top: React.FC<TopProps> = ({ className = "" }) => {
   // };
 
   return (
-    <div
-      id="Top"
-      className={classNames(
-        style.Top,
-        className
-        // !imageLoaded ? style["Top--beforeLoaded"] : ""
-      )}
-    >
-      {/* <Loading isLoadedFirstImage={imageLoaded} /> */}
-      <div className={style.Top__videoWrapper}>
-        <img
-          width={560}
-          src={kehaiImg}
-          alt="気配を感じさせる手書き線"
-          className={style.Top__lineImage}
-        />
-
-        <div className={style.Top__videoFrame}>
-          <video
-            playsInline
-            muted={true}
-            autoPlay={true}
-            loop={true}
-            src="/video/topVisualVideo.mov"
-            className={style.Top__video}
+    <FadeInContainer>
+      <div
+        id="Top"
+        className={classNames(
+          style.Top,
+          className
+          // !imageLoaded ? style["Top--beforeLoaded"] : ""
+        )}
+      >
+        {/* <Loading isLoadedFirstImage={imageLoaded} /> */}
+        <div className={style.Top__videoWrapper}>
+          <img
+            width={560}
+            src={kehaiImg}
+            alt="気配を感じさせる手書き線"
+            className={style.Top__lineImage}
           />
+
+          <div className={style.Top__videoFrame}>
+            <video
+              playsInline
+              muted={true}
+              autoPlay={true}
+              loop={true}
+              src="/video/topVisualVideo.mov"
+              className={style.Top__video}
+            />
+          </div>
+          <p className={style.Top__text}>
+            Studio K-Fi is a furniture design studio that
+            <br />
+            aims to bring a "good vibe" into everyday life through its designs.
+          </p>
         </div>
-        <p className={style.Top__text}>
-          Studio K-Fi is a furniture design studio that
-          <br />
-          aims to bring a "good vibe" into everyday life through its designs.
-        </p>
+        <ScrollIndicator className={style.Top__scrollIndicator} />
       </div>
-      <ScrollIndicator className={style.Top__scrollIndicator} />
-    </div>
+    </FadeInContainer>
   );
 };
 
