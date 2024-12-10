@@ -4,19 +4,17 @@
 .Top {
   position: relative;
   padding: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100svh;
 
   .Top__videoWrapper {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
     transform: translateX(-50px);
     height: 460px;
-
-    @include respondToMd {
-      margin-top: 116px;
-    }
 
     @include respondToLg {
       transform: initial;
@@ -82,23 +80,14 @@
 
   .Top__text {
     position: absolute;
-    top: 100px;
+    top: 160px;
     right: 0px;
     width: fit-content;
     font-size: 12px;
     line-height: 1.2;
     letter-spacing: 0.3px;
-    transform: rotate(90deg) translateY(-80px);
     transform-origin: top left;
-
-    // この部分だけ細かく刻んで調整する
-    @media (max-width: 1300px) {
-      transform: rotate(90deg) translateY(-160px);
-    }
-
-    @media (max-width: 1100px) {
-      transform: rotate(90deg) translateY(-200px);
-    }
+    transform: rotate(90deg) translateY(-280px);
 
     @include respondToLg {
       display: none;
