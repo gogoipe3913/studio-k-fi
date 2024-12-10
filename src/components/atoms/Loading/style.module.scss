@@ -21,7 +21,31 @@
     opacity: 0;
   }
 
+  .Loading__logoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      animation: gradientShift 3s infinite;
+      transition-timing-function: ease-in;
+    }
+  }
+
   .Loading__logo {
     width: 200px;
+    display: block;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    color: $font-color-black;
+  }
+  50% {
+    color: $font-color-hover;
+  }
+  100% {
+    color: $font-color-black;
   }
 }

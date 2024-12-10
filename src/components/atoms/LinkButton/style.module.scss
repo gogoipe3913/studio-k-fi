@@ -17,6 +17,7 @@
 .LinkButton__button {
   display: flex;
   width: 167px;
+  color: inherit;
 
   @include respondToSm {
     width: fit-content;
@@ -64,7 +65,7 @@
   }
 }
 
-.LinkButton__buttonText {
+.LinkButton__buttonWrapper .LinkButton__buttonText {
   display: block;
   padding: 2px 24px;
   border-radius: 17px;

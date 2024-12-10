@@ -7,31 +7,26 @@ import classNames from "classnames";
 import { FadeInContainer } from "../../atoms/FadeInContainer";
 
 type TopProps = {
+  isLoading: boolean;
+  closeLoadingPage?(): void;
   className?: string;
 };
 
-const Top: React.FC<TopProps> = ({ className = "" }) => {
-  // const [imageLoaded, setImageLoaded] = useState(false);
-
-  // const handleImageLoaded = () => {
-  //   console.log("あああ");
-  //   // Loadingアニメーションが消えるのを待つ
-  //   setTimeout(() => {
-  //     setImageLoaded(true);
-  //   }, 300);
-  // };
-
+const Top: React.FC<TopProps> = ({
+  isLoading,
+  closeLoadingPage = () => {},
+  className = "",
+}) => {
   return (
     <FadeInContainer>
       <div
         id="Top"
         className={classNames(
           style.Top,
+          isLoading ? "" : style["Top--displayed"],
           className
-          // !imageLoaded ? style["Top--beforeLoaded"] : ""
         )}
       >
-        {/* <Loading isLoadedFirstImage={imageLoaded} /> */}
         <div className={style.Top__videoWrapper}>
           <img
             width={560}
@@ -47,6 +42,11 @@ const Top: React.FC<TopProps> = ({ className = "" }) => {
               autoPlay={true}
               loop={true}
               src="/video/topVisualVideo.mov"
+              onLoad={() => {
+                setTimeout(() => {
+                  closeLoadingPage();
+                }, 1000);
+              }}
               className={style.Top__video}
             />
           </div>
