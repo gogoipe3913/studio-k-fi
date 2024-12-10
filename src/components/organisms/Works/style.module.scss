@@ -53,9 +53,14 @@ $timing-function-image: cubic-bezier(0.83, 0, 0.17, 1);
     border-radius: 20px 4px 60px 8px;
     overflow: hidden;
 
+    @include respondToSm {
+      border-radius: 150px 150px 8px 8px;
+    }
+
     transition-duration: 0.8s;
     transition-timing-function: $timing-function-image;
   }
+
   .Works__itemImage {
     transition-duration: 0.7s;
     transition-timing-function: $timing-function-image;
@@ -91,7 +96,7 @@ $timing-function-image: cubic-bezier(0.83, 0, 0.17, 1);
 
   .Works__itemInfoTexts {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
   }
 
   .Works__itemInfoId {
@@ -111,6 +116,10 @@ $timing-function-image: cubic-bezier(0.83, 0, 0.17, 1);
 
     transition-duration: 0.7s;
     transition-timing-function: $timing-function-image;
+
+    @include respondToSm {
+      margin-top: 12px;
+    }
 
     &::before {
       content: "";

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "./style.module.scss";
 import { FadeInContainer } from "../../atoms/FadeInContainer";
 import PhilosophyDrawer from "../PhilosophyDrawer";
+import Overlay from "../../atoms/Overlay";
 
 const Philosophy: React.FC = () => {
   const [isDisplayed, setIsDisplayed] = useState(false);
@@ -61,6 +62,14 @@ const Philosophy: React.FC = () => {
           </FadeInContainer>
         </div>
       </div>
+      {isDisplayed ? (
+        <Overlay
+          isDisplayed={isDisplayed}
+          closeDrawer={() => {
+            setIsDisplayed(false);
+          }}
+        />
+      ) : null}
       <PhilosophyDrawer
         isDisplayed={isDisplayed}
         setIsDisplayed={() => {

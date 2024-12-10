@@ -5,6 +5,7 @@ import style from "./style.module.scss";
 import classNames from "classnames";
 import { ENTERED, EXITED } from "react-transition-group/Transition";
 import { ANCHOR_ITEMS, EXTERNAL_URLS } from "../SideColumn/data";
+import Overlay from "../../atoms/Overlay";
 
 const ANIMATION_CLASS_NAMES = {
   ENTERED: style["Menu__contentsListWrapper--entered"],
@@ -31,6 +32,14 @@ const Menu: React.FC<MenuProps> = ({ className = "" }) => {
 
   return (
     <div className={classNames(style.Menu, className)}>
+      {isOpened ? (
+        <Overlay
+          isDisplayed={isOpened}
+          closeDrawer={() => {
+            setIsOpened(false);
+          }}
+        />
+      ) : null}
       <button
         className={style.Menu__hamburgerButton}
         onClick={() => {

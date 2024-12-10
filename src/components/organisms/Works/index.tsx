@@ -5,6 +5,7 @@ import style from "./style.module.scss";
 import { worksItems } from "./data";
 import WorksDrawer from "../WorksDrawer";
 import { FadeInContainer } from "../../atoms/FadeInContainer";
+import Overlay from "../../atoms/Overlay";
 
 export type WorksItemDataInterface = {
   title: string;
@@ -49,10 +50,10 @@ const WorkItems: React.FC<WorkItemsProps> = ({
         </button>
         <div className={style.Works__itemInfo}>
           <p className={style.Works__itemInfoTexts}>
-            <span className={style.Works__itemInfoId}>{id}</span>
             <span className={style.Works__itemInfoCategory}>{category}</span>
           </p>
           <h3 className={style.Works__itemInfoTitle}>{title}</h3>
+          <span className={style.Works__itemInfoId}>{id}</span>
         </div>
       </li>
     </FadeInContainer>
@@ -92,6 +93,14 @@ const Works: React.FC = () => {
           ))}
         </ul>
       </div>
+      {isDisplayed ? (
+        <Overlay
+          isDisplayed={isDisplayed}
+          closeDrawer={() => {
+            setIsDisplayed(false);
+          }}
+        />
+      ) : null}
       <WorksDrawer
         item={displayedItem}
         isDisplayed={isDisplayed}

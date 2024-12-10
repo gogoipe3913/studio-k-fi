@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./style.module.scss";
 import classNames from "classnames";
-import Overlay from "../../atoms/Overlay";
 
 const PhilosophyDrawerContents: React.FC = () => (
   <div
@@ -104,24 +103,21 @@ const PhilosophyDrawer: React.FC<PhilosophyDrawerProps> = ({
   setIsDisplayed = () => {},
 }) => {
   return (
-    <>
-      <Overlay isDisplayed={isDisplayed} />
-      <div
-        id="PhilosophyDrawer"
-        className={classNames(
-          style.PhilosophyDrawer,
-          isDisplayed ? style["PhilosophyDrawer--displayed"] : ""
-        )}
+    <div
+      id="PhilosophyDrawer"
+      className={classNames(
+        style.PhilosophyDrawer,
+        isDisplayed ? style["PhilosophyDrawer--displayed"] : ""
+      )}
+    >
+      <button
+        onClick={setIsDisplayed}
+        className={style.PhilosophyDrawer__closeButton}
       >
-        <button
-          onClick={setIsDisplayed}
-          className={style.PhilosophyDrawer__closeButton}
-        >
-          <span className={style.PhilosophyDrawer__closeButtonLine} />
-        </button>
-        <PhilosophyDrawerContents />
-      </div>
-    </>
+        <span className={style.PhilosophyDrawer__closeButtonLine} />
+      </button>
+      <PhilosophyDrawerContents />
+    </div>
   );
 };
 

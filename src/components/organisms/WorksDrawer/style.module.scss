@@ -34,6 +34,10 @@
     width: 80px;
     height: 16px;
 
+    @include respondToSm {
+      right: 40px;
+    }
+
     @media (hover: hover) {
       &:hover {
         .WorksDrawer__closeButtonLine {
@@ -82,6 +86,7 @@
 
   .WorksDrawer__title {
     font-size: 22px;
+    font-weight: 400;
   }
 
   .WorksDrawer__separator {
@@ -99,6 +104,11 @@
   .WorksDrawer__body {
     display: flex;
     gap: 48px;
+
+    @include respondToSm {
+      flex-direction: column;
+      width: 272px;
+    }
   }
 
   .WorksDrawer__text {
@@ -115,6 +125,11 @@
     font-size: 14px;
     line-height: 2.1em;
     letter-spacing: 0.06em;
+
+    @include respondToSm {
+      margin-left: initial;
+      margin-top: 48px;
+    }
   }
 
   .WorksDrawer__text,
@@ -122,6 +137,11 @@
     max-width: 440px;
     min-width: 300px;
     white-space: pre-line;
+
+    @include respondToSm {
+      max-width: initial;
+      min-width: initial;
+    }
   }
 
   .WorksDrawer__images {
