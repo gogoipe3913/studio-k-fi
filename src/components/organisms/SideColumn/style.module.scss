@@ -93,6 +93,7 @@
     display: none;
 
     @include respondToSm {
+      padding-top: 4px;
       display: initial;
     }
   }
