@@ -4,15 +4,20 @@ import classNames from "classnames";
 
 type OverlayProps = {
   isDisplayed: boolean;
+  closeDrawer?(): void;
 };
 
-const Overlay: React.FC<OverlayProps> = ({ isDisplayed = false }) => {
+const Overlay: React.FC<OverlayProps> = ({
+  isDisplayed = false,
+  closeDrawer = () => {},
+}) => {
   return (
     <button
       className={classNames(
         style.Overlay,
         isDisplayed ? style["Overlay--displayed"] : ""
       )}
+      onClick={closeDrawer}
     />
   );
 };
