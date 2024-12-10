@@ -53,12 +53,12 @@ $timing-function-image: cubic-bezier(0.83, 0, 0.17, 1);
     border-radius: 20px 4px 60px 8px;
     overflow: hidden;
 
+    transition-duration: 0.8s;
+    transition-timing-function: $timing-function-image;
+
     @include respondToSm {
       border-radius: 150px 150px 8px 8px;
     }
-
-    transition-duration: 0.8s;
-    transition-timing-function: $timing-function-image;
   }
 
   .Works__itemImage {
