@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 import { worksItems } from "./data";
 import WorksDrawer from "../WorksDrawer";
