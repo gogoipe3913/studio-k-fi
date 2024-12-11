@@ -8,6 +8,13 @@
   justify-content: center;
   align-items: center;
   height: 100svh;
+  opacity: 0;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in-out;
+
+  &--displayed {
+    opacity: 1;
+  }
 
   .Top__videoWrapper {
     position: relative;
@@ -63,18 +70,20 @@
 
   .Top__lineImage {
     position: absolute;
+    top: -40px;
     width: 60vw;
-    max-width: 460px;
-
-    @include respondToLg {
-      top: initial;
-      left: initial;
-      max-width: 400px;
-    }
+    max-width: 560px;
 
     @include respondToMd {
-      top: 8px;
+      top: 0;
+      left: initial;
       width: 88vw;
+      max-width: 440px;
+    }
+
+    @include respondToSm {
+      top: 8px;
+      max-width: 400px;
     }
   }
 

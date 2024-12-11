@@ -14,7 +14,11 @@ const Loading: React.FC<LoadingProps> = ({ isLoadedFirstImage }) => {
     if (isLoadedFirstImage) {
       setTimeout(() => {
         setIsDisplayed(false);
-      }, 1000);
+        /**
+         * ローディングページのフェードアウトアニメーションを待ってから
+         * DOM上の削除を行いたいので、1.5秒待つ
+         */
+      }, 1500);
     }
   }, [isLoadedFirstImage]);
 

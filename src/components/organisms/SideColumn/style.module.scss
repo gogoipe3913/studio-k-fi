@@ -8,17 +8,19 @@
   justify-content: space-between;
   width: fit-content;
   height: 100svh;
-  animation: fadeIn 0.7s ease-in forwards;
+  opacity: 0;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in-out;
+
+  &--displayed {
+    opacity: 1;
+  }
 
   @include respondToSm {
     padding: 0px 36px;
     flex-direction: row;
     width: 100vw;
     height: initial;
-  }
-
-  // スマホ以下
-  @include respondToSm {
   }
 
   & .SideColumn__logoLink {

@@ -7,14 +7,14 @@ import classNames from "classnames";
 import { FadeInContainer } from "../../atoms/FadeInContainer";
 
 type TopProps = {
-  isLoading: boolean;
-  closeLoadingPage?(): void;
+  isLoaded: boolean;
+  onLoadData?(): void;
   className?: string;
 };
 
 const Top: React.FC<TopProps> = ({
-  isLoading,
-  closeLoadingPage = () => {},
+  isLoaded,
+  onLoadData = () => {},
   className = "",
 }) => {
   return (
@@ -23,7 +23,7 @@ const Top: React.FC<TopProps> = ({
         id="Top"
         className={classNames(
           style.Top,
-          isLoading ? "" : style["Top--displayed"],
+          isLoaded ? style["Top--displayed"] : "",
           className
         )}
       >
@@ -42,9 +42,10 @@ const Top: React.FC<TopProps> = ({
               autoPlay={true}
               loop={true}
               src="/video/topVisualVideo.mov"
-              onLoad={() => {
+              onLoadedData={() => {
                 setTimeout(() => {
-                  closeLoadingPage();
+                  onLoadData();
+                  // デフォルトで1秒はローディングする
                 }, 1000);
               }}
               className={style.Top__video}

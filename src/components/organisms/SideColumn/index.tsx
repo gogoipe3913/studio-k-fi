@@ -7,12 +7,23 @@ import { ANCHOR_ITEMS, EXTERNAL_URLS } from "./data";
 import Menu from "../Menu";
 
 type SideColumnProps = {
+  isLoaded: boolean;
   className?: string;
 };
 
-const SideColumn: React.FC<SideColumnProps> = ({ className = "" }) => {
+const SideColumn: React.FC<SideColumnProps> = ({
+  isLoaded,
+  className = "",
+}) => {
   return (
-    <div id="SideColumn" className={classNames(style.SideColumn, className)}>
+    <div
+      id="SideColumn"
+      className={classNames(
+        style.SideColumn,
+        isLoaded ? style["SideColumn--displayed"] : "",
+        className
+      )}
+    >
       <a href="/" className={style.SideColumn__logoLink}>
         <LogoMain />
         <p className={style.SideColumn__logoLinkText}>
