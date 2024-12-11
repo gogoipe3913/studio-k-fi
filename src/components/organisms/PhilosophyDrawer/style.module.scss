@@ -8,7 +8,7 @@
   z-index: $global-elevation-4;
   padding: 80px 160px 200px;
   width: calc(100% - 160px - 100px);
-  height: 88svh;
+  height: 98svh;
   overflow-y: scroll;
   transform: translateX(160%);
   transition-duration: 0.5s;
@@ -19,7 +19,6 @@
 
   @include respondToSm {
     width: 92%;
-    height: 98svh;
     padding: 80px 0 80px 40px;
   }
 
@@ -27,7 +26,11 @@
     transform: translateX(0);
   }
 
-  .PhilosophyDrawer__closeButton {
+  & .PhilosophyDrawer__contents {
+    max-width: 680px;
+  }
+
+  & .PhilosophyDrawer__closeButton {
     position: fixed;
     top: 100px;
     right: 100px;
@@ -53,7 +56,7 @@
     }
   }
 
-  .PhilosophyDrawer__closeButtonLine {
+  & .PhilosophyDrawer__closeButtonLine {
     position: relative;
     display: block;
     width: 80px;
@@ -77,25 +80,25 @@
     }
   }
 
-  .PhilosophyDrawer__contents {
+  & .PhilosophyDrawer__contents {
     & > * {
       transition-duration: 0.5s;
       transition-timing-function: $timing-function-image;
     }
   }
 
-  .PhilosophyDrawer__title {
+  & .PhilosophyDrawer__title {
     font-size: 22px;
   }
 
-  .PhilosophyDrawer__separator {
+  & .PhilosophyDrawer__separator {
     margin: 32px 0 40px;
     width: 16px;
     height: 1px;
     background-color: $font-color-white;
   }
 
-  .PhilosophyDrawer__texts {
+  & .PhilosophyDrawer__texts {
     display: flex;
 
     @include respondToSm {
@@ -104,13 +107,13 @@
     }
   }
 
-  .PhilosophyDrawer__text {
+  & .PhilosophyDrawer__text {
     font-size: 11px;
     line-height: 2.2em;
     letter-spacing: 0.1em;
   }
 
-  .PhilosophyDrawer__textEnglish {
+  & .PhilosophyDrawer__textEnglish {
     margin-left: 60px;
     font-size: 13px;
     line-height: 2.1em;
@@ -122,8 +125,8 @@
     }
   }
 
-  .PhilosophyDrawer__text,
-  .PhilosophyDrawer__textEnglish {
+  & .PhilosophyDrawer__text,
+  & .PhilosophyDrawer__textEnglish {
     max-width: 440px;
     min-width: 300px;
 

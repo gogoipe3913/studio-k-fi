@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import { FadeInContainer } from "../../atoms/FadeInContainer";
 import PhilosophyDrawer from "../PhilosophyDrawer";
@@ -6,6 +6,18 @@ import Overlay from "../../atoms/Overlay";
 
 const Philosophy: React.FC = () => {
   const [isDisplayed, setIsDisplayed] = useState(false);
+
+  useEffect(() => {
+    if (isDisplayed) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isDisplayed]);
   return (
     <>
       <div id="philosophy" className={style.Philosophy}>

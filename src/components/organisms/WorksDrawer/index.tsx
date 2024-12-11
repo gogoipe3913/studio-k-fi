@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./style.module.scss";
 import classNames from "classnames";
 import { WorksItemDataInterface } from "../Works";
@@ -58,6 +58,18 @@ const WorksDrawer: React.FC<WorksDrawerProps> = ({
   isDisplayed = false,
   setIsDisplayed = () => {},
 }) => {
+  useEffect(() => {
+    if (isDisplayed) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isDisplayed]);
+
   return (
     <div
       id="WorksDrawer"

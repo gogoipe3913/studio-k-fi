@@ -7,7 +7,7 @@ const PhilosophyDrawerContents: React.FC = () => (
     onWheel={(event) => {
       event.stopPropagation();
     }}
-    className={style.WorksDrawer__contents}
+    className={style.PhilosophyDrawer__contents}
   >
     <h3 className={style.PhilosophyDrawer__title}>Philosophy</h3>
     <div className={style.PhilosophyDrawer__separator} />
@@ -53,7 +53,7 @@ const PhilosophyDrawerContents: React.FC = () => (
         <br />
         自身の存在を確かなものであると肯定させる喜びがあると信じて、
         <br />
-        私たちは、生活の中に”良い気配”を与えるデザインを目指しています
+        私たちは、生活の中に”良い気配”を与えるデザインを目指しています。
       </p>
       <p className={style.PhilosophyDrawer__textEnglish}>
         "I think, therefore I am."
