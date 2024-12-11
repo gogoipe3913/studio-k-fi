@@ -16,7 +16,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
   className = "",
 }) => {
   return isBlack ? (
-    <div className={classNames(style.LinkButton__buttonWrapper, className)}>
+    <div className={classNames(style.LinkButton, className)}>
       <a className={style.LinkButton__button} href={href}>
         <span
           className={classNames(
@@ -42,7 +42,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
       </a>
     </div>
   ) : (
-    <div className={classNames(style.LinkButton__buttonWrapper, className)}>
+    <div className={classNames(style.LinkButton, className)}>
       <a className={style.LinkButton__button} href={href}>
         <span className={style.LinkButton__buttonText}>{text}</span>
         <span className={style.LinkButton__buttonCircle}>
