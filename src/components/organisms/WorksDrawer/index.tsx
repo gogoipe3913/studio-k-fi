@@ -16,7 +16,7 @@ const WorksDrawerContents: React.FC<WorksDrawerContentsProps> = ({
   title,
   createDate,
   category,
-  urls,
+  images,
   text,
   textEnglish,
 }) => {
@@ -43,9 +43,9 @@ const WorksDrawerContents: React.FC<WorksDrawerContentsProps> = ({
           <p className={style.WorksDrawer__textEnglish}>{textEnglish}</p>
         </div>
         <div className={style.WorksDrawer__images}>
-          {urls.length !== 0 &&
-            urls.map((url, index) => (
-              <img key={index} src={url} alt="" loading="lazy" />
+          {images.length !== 0 &&
+            images.map((image, index) => (
+              <img key={index} src={image.url} alt="" loading="lazy" />
             ))}
         </div>
       </div>
