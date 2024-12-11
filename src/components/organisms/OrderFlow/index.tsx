@@ -17,7 +17,7 @@ const OrderFlow: React.FC = () => {
         <div className={style.OrderFlow__contents}>
           <FadeInContainer>
             <h2 className={style.OrderFlow__title}>
-              <span className={style.OrderFlow__titleBody}>OrderFlow</span>
+              <span className={style.OrderFlow__titleBody}>Order Flow</span>
             </h2>
           </FadeInContainer>
           <FadeInContainer>

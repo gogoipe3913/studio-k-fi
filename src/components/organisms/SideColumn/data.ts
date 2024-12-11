@@ -17,7 +17,7 @@ const ANCHOR_ITEMS = [
     id: "works",
   },
   {
-    title: "OrderFlow",
+    title: "Order Flow",
     id: "orderFlow",
   },
 ];
