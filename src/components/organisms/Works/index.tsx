@@ -21,7 +21,7 @@ type WorkItemsProps = WorksItemDataInterface & {
   setDisplayedItem(): void;
 };
 
-const WorkItems: React.FC<WorkItemsProps> = ({
+const WorkItem: React.FC<WorkItemsProps> = ({
   title,
   id,
   category,
@@ -79,18 +79,34 @@ const Works: React.FC = () => {
           <span className={style.Works__titleBody}>Works</span>
         </h2>
         <ul className={style.Works__items}>
-          {worksItems.map((item, index) => (
-            <WorkItems
-              key={index}
-              {...item}
-              setIsDisplayed={() => {
-                setIsDisplayed(true);
-              }}
-              setDisplayedItem={() => {
-                setDisplayedItem(item);
-              }}
-            />
-          ))}
+          {worksItems.map((item, index) => {
+            return index / 6 == 1 ? (
+              <React.Fragment key={index}>
+                <div id={`forResizingByLenis${index / 6}`} />
+                <WorkItem
+                  key={index}
+                  {...item}
+                  setIsDisplayed={() => {
+                    setIsDisplayed(true);
+                  }}
+                  setDisplayedItem={() => {
+                    setDisplayedItem(item);
+                  }}
+                />
+              </React.Fragment>
+            ) : (
+              <WorkItem
+                key={index}
+                {...item}
+                setIsDisplayed={() => {
+                  setIsDisplayed(true);
+                }}
+                setDisplayedItem={() => {
+                  setDisplayedItem(item);
+                }}
+              />
+            );
+          })}
         </ul>
       </div>
       {isDisplayed ? (

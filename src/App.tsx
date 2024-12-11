@@ -9,12 +9,14 @@ function App() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const targetId = "orderFlow";
-    const targetElement = document.getElementById(targetId);
-
-    if (!targetElement) {
-      return;
-    }
+    const targetIdWorks = "forResizingByLenis1";
+    const targetElementWorks = document.getElementById(targetIdWorks);
+    const targetIdWorks2 = "forResizingByLenis2";
+    const targetElementWorks2 = document.getElementById(targetIdWorks2);
+    const targetIdWorks3 = "forResizingByLenis3";
+    const targetElementWorks3 = document.getElementById(targetIdWorks3);
+    const targetIdFlow = "orderFlow";
+    const targetElementFlow = document.getElementById(targetIdFlow);
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
@@ -31,7 +33,18 @@ function App() {
     });
 
     // ターゲットを監視
-    observerRef.current.observe(targetElement);
+    if (targetElementWorks) {
+      observerRef.current.observe(targetElementWorks);
+    }
+    if (targetElementWorks2) {
+      observerRef.current.observe(targetElementWorks2);
+    }
+    if (targetElementWorks3) {
+      observerRef.current.observe(targetElementWorks3);
+    }
+    if (targetElementFlow) {
+      observerRef.current.observe(targetElementFlow);
+    }
 
     // クリーンアップ
     return () => {
