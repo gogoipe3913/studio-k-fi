@@ -35,6 +35,11 @@ const WorkItem: React.FC<WorkItemsProps> = ({
   setIsDisplayed,
   setDisplayedItem,
 }) => {
+  // 改行を含めたい処理
+  const categoryName =
+    category[0] === "Independent production"
+      ? `Independent\nproduction`
+      : category[0];
   return (
     <FadeInContainer>
       <li className={style.Works__item} onClick={setIsDisplayed}>
@@ -56,7 +61,9 @@ const WorkItem: React.FC<WorkItemsProps> = ({
         </button>
         <div className={style.Works__itemInfo}>
           <p className={style.Works__itemInfoTexts}>
-            <span className={style.Works__itemInfoCategory}>{category[0]}</span>
+            <span className={style.Works__itemInfoCategory}>
+              {categoryName}
+            </span>
           </p>
           <h3 className={style.Works__itemInfoTitle}>{title}</h3>
           <span className={style.Works__itemInfoId}>{productId}</span>
