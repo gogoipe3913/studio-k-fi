@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import ScrollIndicator from "../../atoms/ScrollIndicator";
 // import Loading from "../../atoms/Loading";
@@ -17,13 +17,23 @@ const Top: React.FC<TopProps> = ({
   onLoadData = () => {},
   className = "",
 }) => {
+  const [isDisplayed, setIsDisplayed] = useState(false);
+
+  useEffect(() => {
+    if (isLoaded) {
+      setTimeout(() => {
+        setIsDisplayed(true);
+      }, 1000);
+    }
+  }, [isLoaded]);
+
   return (
     <FadeInContainer>
       <div
         id="Top"
         className={classNames(
           style.Top,
-          isLoaded ? style["Top--displayed"] : "",
+          isDisplayed ? style["Top--displayed"] : "",
           className
         )}
       >
