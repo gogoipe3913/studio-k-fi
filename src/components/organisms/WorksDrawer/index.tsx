@@ -36,7 +36,7 @@ const WorksDrawerContents: React.FC<WorksDrawerContentsProps> = ({
         <div className={style.WorksDrawer__texts}>
           <p className={style.WorksDrawer__text}>{text}</p>
           <LinkButton
-            href={"#"}
+            href={"https://kfigallery.base.shop/"}
             text="View web shop"
             className={style.WorksDrawer__link}
           />
