@@ -13,15 +13,6 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => (
   <FadeInContainer>
     <div className={classNames(style.Footer, className)}>
       <div className={style.Footer__leftColumn}>
-        {/* <ul className={style.Footer__anchors}>
-        {ANCHOR_ITEMS.map((item, index) => (
-          <li key={index}>
-            <Link to={item.id} duration={600} smooth={true}>
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul> */}
         <div className={style.Footer__companyInfo}>
           <img
             width={92}
@@ -61,7 +52,7 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => (
           alt="手書き線"
           className={style.Footer__lineImage}
         />
-        <p className={style.Footer__contact}>
+        <div className={style.Footer__contact}>
           <span>お仕事のご相談はこちらから</span>
           <LinkButton
             href="mailto:info@k-fi.jp"
@@ -69,7 +60,7 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => (
             isBlack={true}
             className={style.Footer__contactLink}
           />
-        </p>
+        </div>
       </div>
     </div>
   </FadeInContainer>
