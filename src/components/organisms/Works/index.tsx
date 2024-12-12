@@ -53,8 +53,10 @@ const WorkItem: React.FC<WorkItemsProps> = ({
                 key={index}
                 src={image.url}
                 alt={`${title}のサムネイル画像`}
-                loading="lazy"
                 className={style.Works__itemImage}
+                style={{
+                  aspectRatio: `${image.width} / ${image.height}`,
+                }}
               />
             ) : null
           )}
