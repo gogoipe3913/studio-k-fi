@@ -24,7 +24,7 @@
     height: 460px;
 
     @include respondToLg {
-      transform: initial;
+      transform: translateY(44px);
     }
   }
 
