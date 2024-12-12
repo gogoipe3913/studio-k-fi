@@ -72,6 +72,7 @@
   .Philosophy__button {
     display: flex;
     width: 144px;
+    color: $font-color-black;
 
     @media (hover: hover) {
       &:hover {
