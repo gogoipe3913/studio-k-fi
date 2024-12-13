@@ -12,6 +12,14 @@ type WorksDrawerProps = {
   setIsDisplayed(): void;
 };
 
+const formatDateString = (isoString: string): string => {
+  const date = new Date(isoString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}.${month}.${day}`;
+};
+
 const WorksDrawerContents: React.FC<WorksDrawerContentsProps> = ({
   title,
   createDate,
@@ -20,6 +28,7 @@ const WorksDrawerContents: React.FC<WorksDrawerContentsProps> = ({
   text,
   textEnglish,
 }) => {
+  const formattedCreateDate = formatDateString(createDate);
   return (
     <div
       onWheel={(event) => {
@@ -29,7 +38,7 @@ const WorksDrawerContents: React.FC<WorksDrawerContentsProps> = ({
     >
       <h3 className={style.WorksDrawer__title}>{title}</h3>
       <div className={style.WorksDrawer__separator} />
-      <p className={style.WorksDrawer__createDate}>{createDate}</p>
+      <p className={style.WorksDrawer__createDate}>{formattedCreateDate}</p>
       <p className={style.WorksDrawer__category}>{category}</p>
       <div className={style.WorksDrawer__separator} />
       <div className={style.WorksDrawer__body}>
