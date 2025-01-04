@@ -113,9 +113,9 @@ const Works: React.FC = () => {
         </h2>
         <ul className={style.Works__items}>
           {worksData.map((item, index) => {
-            return index / 3 == 1 ? (
+            return index % 3 == 0 ? (
               <React.Fragment key={index}>
-                <div id={`forResizingByLenis${index / 6}`} />
+                <div id={`forResizingByLenis${index / 3}`} />
                 <WorkItem
                   key={index}
                   {...item}
