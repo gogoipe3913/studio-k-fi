@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import classNames from "classnames";
 import style from "./style.module.scss";
 import ScrollIndicator from "../../atoms/ScrollIndicator";
-// import Loading from "../../atoms/Loading";
-import kehaiImg from "/public/images/kehai.png";
-import classNames from "classnames";
+
 import { FadeInContainer } from "../../atoms/FadeInContainer";
+import Vivus from "vivus";
+import TopLine from "../../atoms/TopLine";
 
 type TopProps = {
   isLoaded: boolean;
@@ -18,11 +19,23 @@ const Top: React.FC<TopProps> = ({
   className = "",
 }) => {
   const [isDisplayed, setIsDisplayed] = useState(false);
+  const [isDisplayedVideo, setIsDisplayedVideo] = useState(false);
 
   useEffect(() => {
     if (isLoaded) {
       setTimeout(() => {
         setIsDisplayed(true);
+        new Vivus(
+          "kfisvg",
+          {
+            type: "sync", // アニメーションタイプ (delayed, sync, oneByOne など)
+            duration: 121, // アニメーションの長さ
+            animTimingFunction: Vivus.EASE, // イージング
+          },
+          () => {
+            setIsDisplayedVideo(true);
+          }
+        );
       }, 1000);
     }
   }, [isLoaded]);
@@ -38,13 +51,7 @@ const Top: React.FC<TopProps> = ({
         )}
       >
         <div className={style.Top__videoWrapper}>
-          <img
-            width={560}
-            src={kehaiImg}
-            alt="気配を感じさせる手書き線"
-            className={style.Top__lineImage}
-          />
-
+          <TopLine className={style.Top__lineImage} />
           <div className={style.Top__videoFrame}>
             <video
               playsInline
@@ -58,7 +65,10 @@ const Top: React.FC<TopProps> = ({
                   // デフォルトで1秒はローディングする
                 }, 1000);
               }}
-              className={style.Top__video}
+              className={classNames(
+                style.Top__video,
+                isDisplayedVideo ? style["Top__video--displayed"] : ""
+              )}
             />
           </div>
           <p className={style.Top__text}>

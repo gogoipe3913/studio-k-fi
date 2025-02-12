@@ -24,7 +24,7 @@
     height: 460px;
 
     @include respondToLg {
-      transform: translateY(60px);
+      transform: translateY(50px);
     }
   }
 
@@ -52,6 +52,13 @@
 
   .Top__video {
     width: 164%;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    opacity: 0;
+
+    &--displayed {
+      opacity: 1;
+    }
   }
 
   .Top__scrollIndicator {
@@ -70,7 +77,8 @@
 
   .Top__lineImage {
     position: absolute;
-    top: -40px;
+    top: -42px;
+    margin-left: -8px;
     width: 60vw;
     max-width: 560px;
 
@@ -83,7 +91,8 @@
 
     @include respondToSm {
       top: 8px;
-      max-width: 400px;
+      width: 92vw;
+      max-width: 430px;
     }
   }
 
