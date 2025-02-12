@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@lottiefiles/react-lottie-player": "^3.6.0",
     "@studio-freight/react-lenis": "^0.0.47",
     "@types/react-scroll": "^1.8.10",
     "classnames": "^2.5.1",
@@ -20,12 +19,14 @@
     "react-dom": "^18.3.1",
     "react-intersection-observer": "^9.13.0",
     "react-scroll": "^1.9.0",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "vivus": "^0.4.6"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/react-transition-group": "^4.4.11",
+    "@types/vivus": "^0.4.7",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
     "@vercel/edge": "^1.1.2",
