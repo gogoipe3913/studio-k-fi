@@ -88,12 +88,8 @@ const Works: React.FC = () => {
   } as WorksItemDataInterface);
   const [worksData, setWorksData] = useState<WorksItemDataInterface[]>([]);
 
-  let serviceDomain = import.meta.env.VITE_SERVICE_DOMAIN;
-  let apiKey = import.meta.env.VITE_API_KEY;
-  if (process && process.env.SERVICE_DOMAIN && process.env.API_KEY) {
-    serviceDomain = process.env.SERVICE_DOMAIN;
-    apiKey = process.env.API_KEY;
-  }
+  const serviceDomain = import.meta.env.VITE_SERVICE_DOMAIN;
+  const apiKey = import.meta.env.VITE_API_KEY;
   const client = createClient({
     serviceDomain,
     apiKey,
