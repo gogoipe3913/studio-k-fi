@@ -8,6 +8,7 @@
   padding: 12px 12px 100px 12px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   color: $font-color-black;
   text-align: center;
 
@@ -78,6 +79,7 @@
     margin-top: 40px;
     font-size: 10px;
     text-align: left;
+    line-height: 1;
   }
 
   .Footer__rightColumn {
