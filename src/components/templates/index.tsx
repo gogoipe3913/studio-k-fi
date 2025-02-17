@@ -12,7 +12,7 @@ import Loading from "../atoms/Loading";
 const Templates: React.FC = () => {
   // ファーストビューのステータス
   const [isLoaded, setIsLoaded] = useState(false);
-  console.log("deploy is completed!");
+  console.log("Welcome to studio K-Fi!");
 
   return (
     <>
