@@ -65,6 +65,13 @@
     position: absolute;
     right: -84px;
     bottom: 64px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    opacity: 0;
+
+    &--displayed {
+      opacity: 1;
+    }
 
     // デスクトップ以下
     @include respondToMd {

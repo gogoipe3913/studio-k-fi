@@ -20,6 +20,7 @@ const Top: React.FC<TopProps> = ({
 }) => {
   const [isDisplayed, setIsDisplayed] = useState(false);
   const [isDisplayedVideo, setIsDisplayedVideo] = useState(false);
+  const [isDisplayedExplore, setIsDisplayedExplore] = useState(false);
 
   useEffect(() => {
     if (isLoaded) {
@@ -39,6 +40,15 @@ const Top: React.FC<TopProps> = ({
       }, 1000);
     }
   }, [isLoaded]);
+
+  useEffect(() => {
+    if (isDisplayedVideo) {
+      // 映像が1秒かけてフェードインするので、それを待つ
+      setTimeout(() => {
+        setIsDisplayedExplore(true);
+      }, 800);
+    }
+  }, [isDisplayedVideo]);
 
   return (
     <FadeInContainer>
@@ -77,7 +87,12 @@ const Top: React.FC<TopProps> = ({
             aims to bring a "good vibe" into everyday life through its designs.
           </p>
         </div>
-        <ScrollIndicator className={style.Top__scrollIndicator} />
+        <ScrollIndicator
+          className={classNames(
+            style.Top__scrollIndicator,
+            isDisplayedExplore ? style["Top__scrollIndicator--displayed"] : ""
+          )}
+        />
       </div>
     </FadeInContainer>
   );
