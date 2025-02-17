@@ -80,21 +80,26 @@ const WorksDrawer: React.FC<WorksDrawerProps> = ({
   }, [isDisplayed]);
 
   return (
-    <div
-      id="WorksDrawer"
-      className={classNames(
-        style.WorksDrawer,
-        isDisplayed ? style["WorksDrawer--displayed"] : ""
-      )}
-    >
+    <>
+      <div
+        id="WorksDrawer"
+        className={classNames(
+          style.WorksDrawer,
+          isDisplayed ? style["WorksDrawer--displayed"] : ""
+        )}
+      >
+        <WorksDrawerContents {...item} />
+      </div>
       <button
         onClick={setIsDisplayed}
-        className={style.WorksDrawer__closeButton}
+        className={classNames(
+          style.WorksDrawerCloseButton,
+          isDisplayed ? style["WorksDrawerCloseButton--displayed"] : ""
+        )}
       >
-        <span className={style.WorksDrawer__closeButtonLine} />
+        <span className={style.WorksDrawerCloseButton__line} />
       </button>
-      <WorksDrawerContents {...item} />
-    </div>
+    </>
   );
 };
 

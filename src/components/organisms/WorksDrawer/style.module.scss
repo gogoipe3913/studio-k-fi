@@ -33,55 +33,14 @@
 
   & .WorksDrawer__contents {
     max-width: 760px;
-  }
 
-  & .WorksDrawer__closeButton {
-    position: fixed;
-    top: 100px;
-    right: 100px;
-    width: 80px;
-    height: 16px;
+    // 特殊なので直接メディアクエリで指定
+    @media (min-width: 1280px) {
+      max-width: 1280px;
+    }
 
     @include respondToSm {
-      right: 40px;
-    }
-
-    @media (hover: hover) {
-      &:hover {
-        .WorksDrawer__closeButtonLine {
-          transform: translateX(12px);
-          background-color: $font-color-hover-blue;
-
-          &::after {
-            transform: rotate(390deg);
-            background-color: $font-color-hover-blue;
-          }
-        }
-      }
-    }
-  }
-
-  & .WorksDrawer__closeButtonLine {
-    position: relative;
-    display: block;
-    width: 80px;
-    height: 1px;
-    background-color: $font-color-white;
-    transition-duration: 0.5s;
-    transition-timing-function: $timing-function-image;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: -5px;
-      right: -2px;
-      display: block;
-      width: 22px;
-      height: 1px;
-      background-color: $font-color-white;
-      transform: rotate(30deg);
-      transition-duration: 1s;
-      transition-timing-function: $timing-function-image;
+      width: calc(100% - 40px);
     }
   }
 
@@ -115,7 +74,12 @@
 
     @include respondToSm {
       flex-direction: column;
-      width: 272px;
+      width: 100%;
+    }
+
+    // 特殊なので直接メディアクエリで指定
+    @media (min-width: 1280px) {
+      gap: 80px;
     }
   }
 
@@ -160,6 +124,85 @@
   & .WorksDrawer__images {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 120px;
+
+    img {
+      border-radius: 4px;
+    }
+
+    @include respondToSm {
+      gap: 80px;
+      width: 100%;
+    }
+  }
+}
+
+.WorksDrawerCloseButton {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  width: 80px;
+  height: 16px;
+  z-index: $global-elevation-4;
+  transform: translateX(250%);
+  transition-duration: 0.5s;
+  transition-timing-function: $timing-function-image;
+
+  &--displayed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @include respondToSm {
+    top: 92px;
+    right: 16px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .WorksDrawerCloseButton__line {
+        transform: translateX(12px);
+        background-color: $font-color-hover-blue;
+
+        &::after {
+          transform: rotate(390deg);
+          background-color: $font-color-hover-blue;
+        }
+      }
+    }
+  }
+
+  & .WorksDrawerCloseButton__line {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 1px;
+    background-color: $font-color-white;
+    transition-duration: 0.5s;
+    transition-timing-function: $timing-function-image;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: -2px;
+      display: block;
+      width: 22px;
+      height: 1px;
+      background-color: $font-color-white;
+      transform: rotate(30deg);
+      transition-duration: 1s;
+      transition-timing-function: $timing-function-image;
+    }
+
+    @include respondToSm {
+      width: 56px;
+
+      &::after {
+        top: -4px;
+        right: 0px;
+        width: 14px;
+      }
+    }
   }
 }
