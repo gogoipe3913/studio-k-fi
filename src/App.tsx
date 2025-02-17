@@ -55,7 +55,7 @@ function App() {
   }, [lenis]);
   // ----Lenisの再計算処理↑----
   return (
-    <ReactLenis root>
+    <ReactLenis root options={{ lerp: 0.1, smoothWheel: true }}>
       <Templates />
     </ReactLenis>
   );
