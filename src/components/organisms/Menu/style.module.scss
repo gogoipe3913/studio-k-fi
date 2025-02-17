@@ -65,7 +65,7 @@
 
     &--displayed {
       width: 70%;
-      height: 98lvh;
+      height: 98svh;
     }
   }
 
@@ -86,7 +86,7 @@
 
   .Menu__contentsList {
     padding-top: 150px;
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .Menu__contentsItem {
@@ -114,7 +114,7 @@
   }
 
   & .Menu__separator {
-    margin: 28px 0;
+    margin: 32px 0;
     width: 12px;
     height: 1px;
     background-color: $font-color-white;
@@ -123,6 +123,7 @@
   & .Menu__link {
     display: block;
     color: $font-color-white;
+    font-size: 17px;
   }
 
   & .Menu__link + .Menu__link {
