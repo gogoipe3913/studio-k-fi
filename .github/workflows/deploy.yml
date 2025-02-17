@@ -18,10 +18,14 @@ jobs:
           npm install
           npm run build
 
-      - name: Set CMS environment variables
-        run: |
-          echo "SERVICE_DOMAIN=${{ secrets.CMS_SERVICE_DOMAIN }}" >> $GITHUB_ENV
-          echo "API_KEY=${{ secrets.CMS_API_KEY }}" >> $GITHUB_ENV
+      - name: Set up environment variables
+      env:
+        CMS_API_KEY: ${{ secrets.CMS_API_KEY }}
+        CMS_SERVICE_DOMAIN: ${{ secrets.CMS_SERVICE_DOMAIN }}
+      run: |
+        # 環境変数を .env ファイルに書き込む
+        echo "VITE_API_URL=$CMS_API_KEY" >> .env
+        echo "VITE_SERVICE_DOMAIN=$CMS_SERVICE_DOMAIN" >> .env
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
