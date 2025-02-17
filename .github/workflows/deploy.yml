@@ -10,19 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build
+      - name: Set up Node.js
         uses: actions/setup-node@v4.0.1
         with:
           node-version: 20
+
+      - name: Install dependencies
       - run: |
           npm install
-          npm run build
 
       - name: Set up environment variables
         run: |
           # 環境変数を .env ファイルに書き込む
           echo "VITE_API_KEY=${{ secrets.CMS_API_KEY }}" >> .env
           echo "VITE_SERVICE_DOMAIN=${{ secrets.CMS_SERVICE_DOMAIN }}" >> .env
+
+      - name: Build the project
+      - run: |
+          npm run build
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
