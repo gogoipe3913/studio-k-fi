@@ -21,7 +21,7 @@ jobs:
       - name: Set up environment variables
         run: |
           # 環境変数を .env ファイルに書き込む
-          echo "VITE_API_URL=${{ secrets.CMS_API_KEY }}" >> .env
+          echo "VITE_API_KEY=${{ secrets.CMS_API_KEY }}" >> .env
           echo "VITE_SERVICE_DOMAIN=${{ secrets.CMS_SERVICE_DOMAIN }}" >> .env
 
       - name: Deploy via FTP
