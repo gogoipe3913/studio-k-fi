@@ -72,7 +72,7 @@
   }
 
   & .SideColumn__separator {
-    margin: 20px 0;
+    margin: 20px 0 24px;
     width: 12px;
     height: 1px;
     background-color: $font-color-black;
@@ -80,6 +80,7 @@
 
   & .SideColumn__link {
     display: block;
+    line-height: 1;
 
     @media (hover: hover) {
       &:hover {
@@ -89,7 +90,7 @@
   }
 
   & .SideColumn__link + .SideColumn__link {
-    margin-top: 12px;
+    margin-top: 16px;
   }
 
   & .SideColumn__spHamburger {
