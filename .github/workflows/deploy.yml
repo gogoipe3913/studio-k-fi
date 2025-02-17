@@ -19,13 +19,10 @@ jobs:
           npm run build
 
       - name: Set up environment variables
-      env:
-        CMS_API_KEY: ${{ secrets.CMS_API_KEY }}
-        CMS_SERVICE_DOMAIN: ${{ secrets.CMS_SERVICE_DOMAIN }}
-      run: |
-        # 環境変数を .env ファイルに書き込む
-        echo "VITE_API_URL=$CMS_API_KEY" >> .env
-        echo "VITE_SERVICE_DOMAIN=$CMS_SERVICE_DOMAIN" >> .env
+        run: |
+          # 環境変数を .env ファイルに書き込む
+          echo "VITE_API_URL=${{ secrets.CMS_API_KEY }}" >> .env
+          echo "VITE_SERVICE_DOMAIN=${{ secrets.CMS_SERVICE_DOMAIN }}" >> .env
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
