@@ -30,56 +30,6 @@
     max-width: 680px;
   }
 
-  & .PhilosophyDrawer__closeButton {
-    position: fixed;
-    top: 100px;
-    right: 100px;
-    width: 80px;
-    height: 16px;
-
-    @include respondToSm {
-      right: 40px;
-    }
-
-    @media (hover: hover) {
-      &:hover {
-        .PhilosophyDrawer__closeButtonLine {
-          transform: translateX(12px);
-          background-color: $font-color-hover-blue;
-
-          &::after {
-            transform: rotate(390deg);
-            background-color: $font-color-hover-blue;
-          }
-        }
-      }
-    }
-  }
-
-  & .PhilosophyDrawer__closeButtonLine {
-    position: relative;
-    display: block;
-    width: 80px;
-    height: 1px;
-    background-color: $font-color-white;
-    transition-duration: 0.5s;
-    transition-timing-function: $timing-function-image;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: -5px;
-      right: -2px;
-      display: block;
-      width: 22px;
-      height: 1px;
-      background-color: $font-color-white;
-      transform: rotate(30deg);
-      transition-duration: 1s;
-      transition-timing-function: $timing-function-image;
-    }
-  }
-
   & .PhilosophyDrawer__contents {
     & > * {
       transition-duration: 0.5s;
@@ -133,6 +83,76 @@
     @include respondToSm {
       max-width: initial;
       min-width: initial;
+    }
+  }
+}
+
+.PhilosophyDrawerCloseButton {
+  position: fixed;
+  top: 100px;
+  right: 113px;
+  width: 80px;
+  height: 16px;
+  z-index: $global-elevation-4;
+  transform: translateX(250%);
+  transition-duration: 0.5s;
+  transition-timing-function: $timing-function-image;
+
+  &--displayed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @include respondToSm {
+    top: 92px;
+    right: 16px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .PhilosophyDrawerCloseButton__line {
+        transform: translateX(12px);
+        background-color: $font-color-hover-blue;
+
+        &::after {
+          transform: rotate(390deg);
+          background-color: $font-color-hover-blue;
+        }
+      }
+    }
+  }
+
+  & .PhilosophyDrawerCloseButton__line {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 1px;
+    background-color: $font-color-white;
+    transition-duration: 0.5s;
+    transition-timing-function: $timing-function-image;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: -2px;
+      display: block;
+      width: 22px;
+      height: 1px;
+      background-color: $font-color-white;
+      transform: rotate(30deg);
+      transition-duration: 1s;
+      transition-timing-function: $timing-function-image;
+    }
+
+    @include respondToSm {
+      width: 56px;
+
+      &::after {
+        top: -4px;
+        right: 0px;
+        width: 14px;
+      }
     }
   }
 }

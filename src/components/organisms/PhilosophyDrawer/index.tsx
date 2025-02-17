@@ -103,21 +103,26 @@ const PhilosophyDrawer: React.FC<PhilosophyDrawerProps> = ({
   setIsDisplayed = () => {},
 }) => {
   return (
-    <div
-      id="PhilosophyDrawer"
-      className={classNames(
-        style.PhilosophyDrawer,
-        isDisplayed ? style["PhilosophyDrawer--displayed"] : ""
-      )}
-    >
+    <>
+      <div
+        id="PhilosophyDrawer"
+        className={classNames(
+          style.PhilosophyDrawer,
+          isDisplayed ? style["PhilosophyDrawer--displayed"] : ""
+        )}
+      >
+        <PhilosophyDrawerContents />
+      </div>
       <button
         onClick={setIsDisplayed}
-        className={style.PhilosophyDrawer__closeButton}
+        className={classNames(
+          style.PhilosophyDrawerCloseButton,
+          isDisplayed ? style["PhilosophyDrawerCloseButton--displayed"] : ""
+        )}
       >
-        <span className={style.PhilosophyDrawer__closeButtonLine} />
+        <span className={style.PhilosophyDrawerCloseButton__line} />
       </button>
-      <PhilosophyDrawerContents />
-    </div>
+    </>
   );
 };
 
