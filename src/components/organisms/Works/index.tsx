@@ -87,9 +87,16 @@ const Works: React.FC = () => {
     textEnglish: "-",
   } as WorksItemDataInterface);
   const [worksData, setWorksData] = useState<WorksItemDataInterface[]>([]);
+
+  let serviceDomain = import.meta.env.VITE_SERVICE_DOMAIN;
+  let apiKey = import.meta.env.VITE_API_KEY;
+  if (process && process.env.SERVICE_DOMAIN && process.env.API_KEY) {
+    serviceDomain = process.env.SERVICE_DOMAIN;
+    apiKey = process.env.API_KEY;
+  }
   const client = createClient({
-    serviceDomain: import.meta.env.VITE_SERVICE_DOMAIN,
-    apiKey: import.meta.env.VITE_API_KEY,
+    serviceDomain,
+    apiKey,
   });
 
   useEffect(() => {

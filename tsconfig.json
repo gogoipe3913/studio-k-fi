@@ -1,4 +1,5 @@
 {
+  "types": ["node"], // Node.jsの型を追加(processのエラーを解除するため)
   "files": [],
   "references": [
     {
