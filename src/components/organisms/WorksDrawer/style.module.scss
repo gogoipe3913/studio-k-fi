@@ -32,12 +32,7 @@
   }
 
   & .WorksDrawer__contents {
-    max-width: 760px;
-
-    // 特殊なので直接メディアクエリで指定
-    @media (min-width: 1280px) {
-      max-width: 1280px;
-    }
+    max-width: 1280px;
 
     @include respondToSm {
       width: calc(100% - 40px);
@@ -140,7 +135,7 @@
 .WorksDrawerCloseButton {
   position: fixed;
   top: 100px;
-  right: 100px;
+  right: 113px;
   width: 80px;
   height: 16px;
   z-index: $global-elevation-4;
