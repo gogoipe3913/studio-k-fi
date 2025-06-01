@@ -1,56 +1,39 @@
 import { Lenis as ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import "./App.css";
 import Templates from "./components/templates";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 function App() {
   // ----Lenisの再計算処理↓----
   const lenis = useLenis();
-  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const targetIdWorks = "forResizingByLenis1";
-    const targetElementWorks = document.getElementById(targetIdWorks);
-    const targetIdWorks2 = "forResizingByLenis2";
-    const targetElementWorks2 = document.getElementById(targetIdWorks2);
-    const targetIdWorks3 = "forResizingByLenis3";
-    const targetElementWorks3 = document.getElementById(targetIdWorks3);
-    const targetIdFlow = "orderFlow";
-    const targetElementFlow = document.getElementById(targetIdFlow);
+    // 全画像読み込み確認してresize
+    const images = Array.from(document.images);
+    let loadedCount = 0;
 
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          lenis?.resize();
-        }
-      });
+    const handleImageLoad = () => {
+      loadedCount++;
+      if (loadedCount === images.length) {
+        lenis?.resize();
+      }
     };
 
-    observerRef.current = new IntersectionObserver(observerCallback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0,
+    images.forEach((img) => {
+      if (img.complete) {
+        handleImageLoad();
+      } else {
+        img.addEventListener("load", handleImageLoad);
+      }
     });
 
-    // ターゲットを監視
-    if (targetElementWorks) {
-      observerRef.current.observe(targetElementWorks);
-    }
-    if (targetElementWorks2) {
-      observerRef.current.observe(targetElementWorks2);
-    }
-    if (targetElementWorks3) {
-      observerRef.current.observe(targetElementWorks3);
-    }
-    if (targetElementFlow) {
-      observerRef.current.observe(targetElementFlow);
-    }
+    // safety fallback
+    setTimeout(() => lenis?.resize(), 3000);
 
-    // クリーンアップ
     return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+      images.forEach((img) => {
+        img.removeEventListener("load", handleImageLoad);
+      });
     };
   }, [lenis]);
   // ----Lenisの再計算処理↑----
