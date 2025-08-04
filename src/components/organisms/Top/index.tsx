@@ -30,7 +30,7 @@ const Top: React.FC<TopProps> = ({
           "kfisvg",
           {
             type: "sync", // アニメーションタイプ (delayed, sync, oneByOne など)
-            duration: 121, // アニメーションの長さ
+            duration: 230, // アニメーションの長さ
             animTimingFunction: Vivus.EASE, // イージング
           },
           () => {
